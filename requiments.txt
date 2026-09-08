@@ -1,0 +1,3 @@
+pip install pyvisa
+pip install zeroconf
+pip install pyvisa-py
