@@ -1,0 +1,135 @@
+{
+  "write": {
+    "overview": "Sends a SCPI command string directly to the power supply to modify settings, change states, or execute actions without expecting a returned data string.",
+    "example": "'VOLT 12.0'  # Sets power supply output voltage to 12.0 Volts",
+    "VOLT": {
+      "meaning": "Sets the target output voltage in volts.",
+      "example": "VOLT 12.0"
+    },
+    "VOLT:PROT": {
+      "meaning": "Sets the Over-Voltage Protection (OVP) threshold level.",
+      "example": "VOLT:PROT 13.5"
+    },
+    "CURR": {
+      "meaning": "Sets the maximum current limit in amperes.",
+      "example": "CURR 2.5"
+    },
+    "CURR:PROT:STAT": {
+      "meaning": "Enables or disables Over-Current Protection (OCP) shutoff.",
+      "example": "CURR:PROT:STAT ON"
+    },
+    "OUTP": {
+      "meaning": "Toggles the power supply output terminals on or off.",
+      "example": "OUTP ON"
+    },
+    "OUTP:SELECT": {
+      "meaning": "Selects the active channel on multi-channel power supplies.",
+      "example": "OUTP:SELECT CH1"
+    },
+    "*RST": {
+      "meaning": "Resets the power supply to its factory default state.",
+      "example": "*RST"
+    },
+    "*CLS": {
+      "meaning": "Clears all status registers and error queues in the device.",
+      "example": "*CLS"
+    },
+    "SYST:REM": {
+      "meaning": "Places the power supply into remote control mode, locking physical controls.",
+      "example": "SYST:REM"
+    },
+    "SYST:LOC": {
+      "meaning": "Returns the power supply to local manual control mode.",
+      "example": "SYST:LOC"
+    }
+  },
+  "read": {
+    "overview": "Retrieves pending data directly from the power supply's output buffer after a measurement or request has already been initiated.",
+    "example": "voltage_str = psu.read()  # Reads the raw ASCII string sitting in the instrument's output buffer",
+    "MEAS:VOLT?": {
+      "meaning": "Measures and returns the actual output voltage currently present at the terminals.",
+      "example": "MEAS:VOLT?"
+    },
+    "MEAS:CURR?": {
+      "meaning": "Measures and returns the actual output current currently flowing through the load.",
+      "example": "MEAS:CURR?"
+    },
+    "MEAS:POW?": {
+      "meaning": "Measures and returns the real-time output power calculated in watts.",
+      "example": "MEAS:POW?"
+    },
+    "VOLT?": {
+      "meaning": "Queries the programmed target voltage setpoint rather than the measured value.",
+      "example": "VOLT?"
+    },
+    "CURR?": {
+      "meaning": "Queries the programmed maximum current limit setpoint.",
+      "example": "CURR?"
+    },
+    "OUTP?": {
+      "meaning": "Queries whether the output state is currently enabled (1) or disabled (0).",
+      "example": "OUTP?"
+    },
+    "*IDN?": {
+      "meaning": "Returns the device identification string containing manufacturer, model, serial number, and firmware version.",
+      "example": "*IDN?"
+    },
+    "SYST:ERR?": {
+      "meaning": "Reads the oldest error code and message from the system error queue.",
+      "example": "SYST:ERR?"
+    },
+    "*STB?": {
+      "meaning": "Queries the Status Byte register to check hardware event flags.",
+      "example": "*STB?"
+    },
+    "VOLT:PROT:TRIP?": {
+      "meaning": "Queries whether the Over-Voltage Protection (OVP) has been triggered.",
+      "example": "VOLT:PROT:TRIP?"
+    }
+  },
+  "query": {
+
+    "overview": "Combines a .write() command and an immediate .read() into a single operation to request data from the device and instantly capture its response.",
+    "example": "idn = psu.query('*IDN?')  # Sends command '*IDN?' and immediately returns response string",
+    "MEAS:VOLT?": {
+      "meaning": "Queries the real-time measured output voltage at the terminals.",
+      "example": "MEAS:VOLT?"
+    },
+    "MEAS:CURR?": {
+      "meaning": "Queries the real-time measured output current flowing to the load.",
+      "example": "MEAS:CURR?"
+    },
+    "MEAS:POW?": {
+      "meaning": "Queries the real-time calculated output power in watts.",
+      "example": "MEAS:POW?"
+    },
+    "VOLT?": {
+      "meaning": "Queries the programmed voltage setpoint value.",
+      "example": "VOLT?"
+    },
+    "CURR?": {
+      "meaning": "Queries the programmed current limit setpoint value.",
+      "example": "CURR?"
+    },
+    "VOLT:PROT?": {
+      "meaning": "Queries the current Over-Voltage Protection (OVP) limit setting.",
+      "example": "VOLT:PROT?"
+    },
+    "CURR:PROT?": {
+      "meaning": "Queries the current Over-Current Protection (OCP) limit setting.",
+      "example": "CURR:PROT?"
+    },
+    "OUTP?": {
+      "meaning": "Queries the output terminal state (returns 1 for ON, 0 for OFF).",
+      "example": "OUTP?"
+    },
+    "*IDN?": {
+      "meaning": "Queries the manufacturer, model, serial number, and firmware version string.",
+      "example": "*IDN?"
+    },
+    "SYST:ERR?": {
+      "meaning": "Queries the next error code and message from the system error queue.",
+      "example": "SYST:ERR?"
+    }
+  }
+}

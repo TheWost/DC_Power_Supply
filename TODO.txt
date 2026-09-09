@@ -1,0 +1,12 @@
+For sure need to test then fix syntax where it dosen't work in TUI. SInce probably it works everywhere in CLi.
+
+
+Need to add try/except/finally everywhere
+
+
+Need to make syntax more clean
+
+
+Need to add DOCS for each function.
+
+That's tomorrow tho. :P
