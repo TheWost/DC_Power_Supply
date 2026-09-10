@@ -1,4 +1,5 @@
 from connect import PsuConnection
+from time import sleep
 import os
 import pyvisa
 from promptmanager import PromptManager
@@ -61,17 +62,17 @@ class TUI:
     def write_prompt(self):
         self.clear()
         cmd = PromptManager("write").run()
-        psu.write(cmd)
+        input(self.psu.write(cmd))
+        sleep(1)
 
     def read_prompt(self):
         self.clear()
-        cmd = PromptManager("read").run()
-        psu.read(cmd)
+        input(self.psu.read())
 
     def query_prompt(self):
         self.clear()
         cmd = PromptManager("query").run()
-        psu.query(cmd)
+        input(self.psu.query(cmd))
 
 
     def settings(self):
@@ -90,9 +91,14 @@ class TUI:
 
             self._enter_menu_prompt(user_command)
 
-:
 
 
 def main():
     psu = PsuConnection.connect()
     TUI(psu).run()
+
+
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import re
 
 
 class PromptManager:
@@ -53,7 +54,7 @@ class PromptManager:
         if cmd.startswith("*") or cmd.endswith("?"):
             return cmd
 
-        if has_digit(cmd):
+        if self.has_digit(cmd):
             command, value = cmd.split( )
 
             value = float(value)

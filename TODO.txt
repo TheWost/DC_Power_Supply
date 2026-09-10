@@ -10,3 +10,42 @@ Need to make syntax more clean
 Need to add DOCS for each function.
 
 That's tomorrow tho. :P
+
+
+
+
+
+
+
+
+If wrong device selected while in connect.py. Take care of try/except/finally
+
+
+
+
+Fix problem with read_prompt and helpers.
+
+
+
+Fix remote problems. Somehitng is saying caused by remote control or osmething.
+
+
+
+
+learn more about how this machine works like
+
+
+
+Think of what to add
+
+
+
+
+Add MATPLOTLIB once understand how this machine works more correctly
+
+
+https://www.keysight.com/us/en/assets/9018-01308/user-manuals/9018-01308.pdf -- inscturtions
+
+
+
+ADD README.md
